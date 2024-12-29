@@ -1,0 +1,140 @@
+:root {
+    --green1: #D8F3DC; 
+    --green2: #B7E4C7;
+    --green3: #95D5B2;
+    --green4: #74C69D;
+    --green5: #52B788;
+    --green6: #40916C;
+    --green7: #2D6A4F;
+    --green8: #1B4332;
+    --green9: #081C15;
+
+    --ff-primary: "Quicksand", serif;
+    --ff-large: "Bebas Neue", serif;
+    --font-size-main-navbar: 20px;
+
+    --navbar-select-clr: var(--green1);
+    --navbar-selct-bg-clr: rgba(217, 217, 217, 0.1);
+    
+    --std-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+/* include border and padding in box-size */
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+img, svg, picture {
+    max-width: 100%;
+}
+
+/* Remove list styles on ul and ol */
+
+ul, ol {
+    list-style: none;
+}
+
+/* Remove anchor text decoration and take color of parent*/
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    height: 86px;
+
+    background: linear-gradient(90deg, #40916C 47.3%, #132B20 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+header #header-logo {
+    margin-left: 2.278645vw;
+    width: 230px;
+    justify-self: left;
+    margin-right: 4.6875vw;
+    cursor: pointer;
+
+}
+
+header .primary-navbar {
+    width: 28.7109%;
+    height: 100%;
+    align-self: center;
+}
+
+header ul {
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+}
+
+header li {
+    align-self: center;
+    font-weight: bold;
+    padding-top: 31px;
+    padding-bottom: 31px;
+    padding-left: 6.349206%;
+    padding-right: 6.349206%;
+
+    color: white;
+    font-family: var(--ff-primary);
+    font-size: var(--font-size-main-navbar);
+    text-shadow: var(--std-shadow);
+}
+
+header li:hover {
+    color: var(--navbar-select-clr);
+    background: var(--navbar-selct-bg-clr);
+}
+
+header .sign-in-btn {
+    margin-left: auto;
+    margin-right: 2.27864%;
+    padding: 9px 1.9531%;
+
+    background: rgba(64, 145, 108, 0.2);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
+    border: none;
+    border-radius: 42px;
+
+    color: white;
+    font-family: var(--ff-primary);
+    font-size: var(--font-size-main-navbar);
+    cursor: pointer;
+}
+
+header .sign-in-btn:hover {
+    filter: brightness(90%);
+}
+
+/* Remove logo from header when viewport width less then 540px  */
+@media only screen and (max-width: 540px) {
+    header #header-logo {
+        display: none;
+    }
+}
+
+#home-content {
+    display: grid;
+    grid-column: 47.016927vw 39.0833vw;
+    grid-row: 58.3132vh 41.6867vh;
+
+}
+
+
+

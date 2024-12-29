@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+         <link rel="stylesheet" href="test.css">
         <!-- font families -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,20 +13,23 @@
         
     </head>
     <body>
-        <nav class="navbar">
-            <ul>
-                <li><a>Home</a></li>
-                <li><a>Calculator</a></li>
-                <li><a>Information</a></li>
-            </ul>
-        </nav>
-        <aside>
-            <img id="home-logo"src="./images/CarbonCount-Logo-small.png" alt="Home Logo">
-        </aside>
+        <header>
+            <a href="home.html"><img href="#" id="header-logo"src="./images/white-logo.png" alt="White Logo"></a>
+            <nav class="primary-navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Calculator</a></li>
+                    <li><a href="#">Information</a></li>
+                </ul>
+            </nav>
+            <button class="sign-in-btn">Sign In</button>
+        </header>
         <main>
-            <h1>HOW CLOSE ARE YOU TO NET ZERO?</h1>
-            <p>Understand your environmental impact with a simple calculation. Start your journey to reducing your carbon footprint now!</p>
-            <button>Calculate Carbon Footprint</button>
+            <div id="home-content">
+                <h1>HOW CLOSE ARE YOU TO NET ZERO?</h1>
+                <p>Understand your environmental impact with a simple calculation. Start your journey to reducing your carbon footprint now!</p>
+                <button>Calculate Carbon Footprint</button>
+            </div>
         </main>
     </body>
 </html>
