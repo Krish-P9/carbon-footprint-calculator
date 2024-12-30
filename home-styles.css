@@ -171,13 +171,17 @@ header .sign-in-btn {
     font-weight: bold;
     font-size: 38px;
 }
-
-#home-content button {
+#home-content a {
     grid-area: b;
     align-self: end;
+    margin-bottom: 30px;
+}
+
+#home-content button {
+    /* grid-area: b;
+    align-self: end; */
     width: 600px;
     height: 80px;
-    margin-bottom: 30px;
     background-color: var(--green8);
     box-shadow: var(--std-shadow);
 
@@ -201,7 +205,7 @@ header .sign-in-btn {
 }
 
 /* Collapse home-content grid when screen less than 1000px */
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
     #home-content h1 {
         grid-area: 1 / 1 / 2 / 3;
         margin: 10px auto;
@@ -219,7 +223,7 @@ header .sign-in-btn {
         grid-row: 4 / -1;
         grid-column: 1 / -1;
     }
-}
+} */
 
 
 
