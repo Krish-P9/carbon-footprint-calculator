@@ -15,8 +15,11 @@
 
     --navbar-select-clr: var(--green1);
     --navbar-selct-bg-clr: rgba(217, 217, 217, 0.1);
-    
+
     --std-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
+
+    --content-bg-clr: linear-gradient(101.82deg, #D8F3DC 36.82%, #95D5B2 99.94%);
+
 }
 
 * {
@@ -122,17 +125,66 @@ header .sign-in-btn:hover {
     filter: brightness(90%);
 }
 
-/* Remove logo from header when viewport width less then 540px  */
-@media only screen and (max-width: 540px) {
-    header #header-logo {
-        display: none;
-    }
+ /*  ///////////  */
+
+ #home-main {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    background: var(--content-bg-clr);
+ }
+
+#home-main > #home-content {
+    margin: 16.677195199vh 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "h p"
+    "h b";
 }
 
-#home-content {
-    display: grid;
-    grid-column: 47.016927vw 39.0833vw;
-    grid-row: 58.3132vh 41.6867vh;
+#home-content h1 {
+    margin: 0;
+    padding: 0;
+    grid-area: h;
+    width: 380px;
+    font-family: var(--ff-large);
+    color: var(--green6);
+    font-weight: 400;
+    font-size: 108px;
+}
+
+#home-content p {
+    grid-area: p;
+    width: 600px;
+    font-family: var(--ff-primary);
+    color: white;
+    text-shadow: var(--std-shadow);
+    font-weight: bold;
+    font-size: 38px;
+}
+
+#home-content button {
+    grid-area: b;
+    align-self: end;
+    width: 600px;
+    height: 80px;
+    background-color: var(--green8);
+    box-shadow: var(--std-shadow);
+
+    border: none;
+    border-radius: 20px;
+
+    font-family: var(--ff-primary);
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+    text-shadow: var(--std-shadow);
+
 
 }
 
