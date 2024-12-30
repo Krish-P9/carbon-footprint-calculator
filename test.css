@@ -19,7 +19,6 @@
     --std-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
 
     --content-bg-clr: linear-gradient(101.82deg, #D8F3DC 36.82%, #95D5B2 99.94%);
-
 }
 
 * {
@@ -105,6 +104,11 @@ header li:hover {
     background: var(--navbar-selct-bg-clr);
 }
 
+/* navbar li element corresponding to active page highlight */
+.active {
+    color: var(--navbar-select-clr);
+}
+
 header .sign-in-btn {
     margin-left: auto;
     margin-right: 2.27864%;
@@ -121,11 +125,9 @@ header .sign-in-btn {
     cursor: pointer;
 }
 
-header .sign-in-btn:hover {
+.hover-select:hover {
     filter: brightness(90%);
 }
-
- /*  ///////////  */
 
  #home-main {
     overflow: auto;
@@ -144,7 +146,9 @@ header .sign-in-btn:hover {
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "h p"
-    "h b";
+    "h b"
+    ". ."
+    ". .";
 }
 
 #home-content h1 {
@@ -173,6 +177,7 @@ header .sign-in-btn:hover {
     align-self: end;
     width: 600px;
     height: 80px;
+    margin-bottom: 30px;
     background-color: var(--green8);
     box-shadow: var(--std-shadow);
 
@@ -184,8 +189,36 @@ header .sign-in-btn:hover {
     color: white;
     font-size: 40px;
     text-shadow: var(--std-shadow);
+    
+    cursor: pointer;
+}
 
+/* Remove header-logo from navbar when screen less than 750px */
+@media only screen and (max-width: 750px) {
+    #header-logo {
+        display: none;
+    }
+}
 
+/* Collapse home-content grid when screen less than 1000px */
+@media only screen and (max-width: 1000px) {
+    #home-content h1 {
+        grid-area: 1 / 1 / 2 / 3;
+        margin: 10px auto;
+        
+    }
+    #home-content p {
+        margin: 10px 10px;
+        grid-row: 3 / 4;
+        grid-column: 1 / -1;
+    }
+    
+    #home-content button {
+        margin: 10px 10px;
+        margin: auto;
+        grid-row: 4 / -1;
+        grid-column: 1 / -1;
+    }
 }
 
 
