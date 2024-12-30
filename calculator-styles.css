@@ -18,7 +18,9 @@
 
     --std-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
 
-    --content-bg-clr: linear-gradient(101.82deg, #D8F3DC 36.82%, #95D5B2 99.94%);
+    --bg-clr: linear-gradient(101.82deg, #D8F3DC 36.82%, #95D5B2 99.94%);
+
+    --placeholder-clr: rgba(179, 179, 179, 0.85);
 }
 
 * {
@@ -129,101 +131,47 @@ header .sign-in-btn {
     filter: brightness(90%);
 }
 
- #home-main {
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    background: var(--content-bg-clr);
- }
-
-#home-main > #home-content {
-    margin: 16.677195199vh 10px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "h p"
-    "h b"
-    ". ."
-    ". .";
+.main-bg {
+    background: var(--bg-clr);
 }
 
-#home-content h1 {
-    margin: 0;
-    padding: 0;
-    grid-area: h;
-    width: 380px;
+/* ----Energy Page---- */
+
+#energy-main {
+    text-align: center;
+}
+
+#energy-main > h1 {
+    color: var(--green8);
     font-family: var(--ff-large);
-    color: var(--green6);
-    font-weight: 400;
-    font-size: 108px;
-}
-
-#home-content p {
-    grid-area: p;
-    width: 600px;
-    font-family: var(--ff-primary);
-    color: white;
     text-shadow: var(--std-shadow);
-    font-weight: bold;
-    font-size: 38px;
-}
-#home-content a {
-    grid-area: b;
-    align-self: end;
-    margin-bottom: 30px;
+    text-align: center;
+    font-size: var(--title-size);
+    margin-top: 50px;
 }
 
-#home-content button {
-    /* grid-area: b;
-    align-self: end; */
-    width: 600px;
-    height: 80px;
-    background-color: var(--green8);
-    box-shadow: var(--std-shadow);
-
-    border: none;
-    border-radius: 20px;
-
-    font-family: var(--ff-primary);
-    font-weight: bold;
+#energy-main > h2 {
     color: white;
-    font-size: 40px;
+    font-family: var(--ff-primary);
     text-shadow: var(--std-shadow);
-    
-    cursor: pointer;
+    text-align: center;
+    font-size: var(--subtitle-size);
 }
 
-/* Remove header-logo from navbar when screen less than 750px */
-@media only screen and (max-width: 750px) {
-    #header-logo {
-        display: none;
-    }
+#energy-main > #electricity {
+    font-family: var(--ff-primary);
+    font-size: var(--regular-size);
+    text-shadow: var(--std-shadow);
 }
 
-/* Collapse home-content grid when screen less than 1000px */
-/* @media only screen and (max-width: 1000px) {
-    #home-content h1 {
-        grid-area: 1 / 1 / 2 / 3;
-        margin: 10px auto;
-        
-    }
-    #home-content p {
-        margin: 10px 10px;
-        grid-row: 3 / 4;
-        grid-column: 1 / -1;
-    }
-    
-    #home-content button {
-        margin: 10px 10px;
-        margin: auto;
-        grid-row: 4 / -1;
-        grid-column: 1 / -1;
-    }
-} */
+#energy-main > #heating {
+    font-family: var(--ff-primary);
+    font-size: var(--regular-size);
+    text-shadow: var(--std-shadow);
+    width: 200px;
+}
 
-
-
+#energy-main > #slider {
+    width: 600px;
+    height: 20px;
+}

@@ -1,108 +1,240 @@
-body{
-    background-color: #D8F3DC;
-    margin: 0px;
-    padding: 0px;
-    width: 100vw;
-    font-family: "Quicksand", serif;
+:root {
+    --green1: #D8F3DC; 
+    --green2: #B7E4C7;
+    --green3: #95D5B2;
+    --green4: #74C69D;
+    --green5: #52B788;
+    --green6: #40916C;
+    --green7: #2D6A4F;
+    --green8: #1B4332;
+    --green9: #081C15;
+
+    --ff-primary: "Quicksand", serif;
+    --ff-large: "Bebas Neue", serif;
+    --font-size-main-navbar: 20px;
+
+    --navbar-select-clr: var(--green1);
+    --navbar-selct-bg-clr: rgba(217, 217, 217, 0.1);
+
+    --std-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
+
+    --bg-clr: linear-gradient(101.82deg, #D8F3DC 36.82%, #95D5B2 99.94%);
+
+    --placeholder-clr: rgba(179, 179, 179, 0.85);
 }
 
-.navbar {
-    margin: 0px;
-    padding: 0px;
-    height: 50px;
-    width: 100%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(90deg, #40916C 47%, #132B20);
-} 
+* {
+    margin: 0;
+    padding: 0;
+}
 
-.navbar ul {
-    padding: 0px;
-    margin: 0px;
+body, html {
+    height: 100%;
+}
+
+/* include border and padding in box-size */
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+img, svg, picture {
+    max-width: 100%;
+}
+
+/* Remove list styles on ul and ol */
+
+ul, ol {
     list-style: none;
+}
+
+/* Remove anchor text decoration and take color of parent*/
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    height: 86px;
+
+    background: linear-gradient(90deg, #40916C 47.3%, #132B20 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+header #header-logo {
+    margin-left: 2.278645vw;
+    width: 230px;
+    justify-self: left;
+    margin-right: 4.6875vw;
+    cursor: pointer;
+
+}
+
+header .primary-navbar {
+    width: 28.7109%;
+    height: 100%;
+    align-self: center;
+}
+
+header ul {
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+}
+
+header li {
+    align-self: center;
+    font-weight: bold;
+    padding-top: 31px;
+    padding-bottom: 31px;
+    padding-left: 6.349206%;
+    padding-right: 6.349206%;
+
+    color: white;
+    font-family: var(--ff-primary);
+    font-size: var(--font-size-main-navbar);
+    text-shadow: var(--std-shadow);
+}
+
+header li:hover {
+    color: var(--navbar-select-clr);
+    background: var(--navbar-selct-bg-clr);
+}
+
+/* navbar li element corresponding to active page highlight */
+.active {
+    color: var(--navbar-select-clr);
+}
+
+header .sign-in-btn {
+    margin-left: auto;
+    margin-right: 2.27864%;
+    padding: 9px 1.9531%;
+
+    background: rgba(64, 145, 108, 0.2);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
+    border: none;
+    border-radius: 42px;
+
+    color: white;
+    font-family: var(--ff-primary);
+    font-size: var(--font-size-main-navbar);
     cursor: pointer;
 }
 
-.navbar li {
-    display: inline-flex;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 1.85vh 1.82vw 1.48vh 1.83vw;
-    padding: 0px;
-
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    color: white;
-    text-shadow: 0px 1px 2px black;
+.hover-select:hover {
+    filter: brightness(90%);
 }
 
-.navbar li:hover {
-    color: #D8F3DC;
+.main-bg {
+    background: var(--bg-clr);
 }
+/* ----Home Page---- */
 
-#home-logo {
-    display: block;
-    margin: 1.5rem auto;
-    padding: 0px;
-    width: clamp(270px, 4.6%, 380px);
-}
-
-main {
-    margin: 0% 6.9%;
-    justify-content: center;
+#home-main {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    height: cover;
+ }
+
+#home-main > #home-content {
+    margin: 16.677195199vh 10px 0px 10px;
+    overflow: hidden;
     display: grid;
-    /* grid-template-columns: 724px 600px; */
-    /* grid-template-rows: 335px 80px; */
-    grid-template-columns: 47.135vw 39.063vw;
-    grid-template-rows: 42.345vh 10.11vh;
-}
-main h1 {
-    grid-area: 1 / 1 / 3 / 2;
-    margin: 0;
-    padding: 0% 40.5% 0% 0%;
-    justify-content: start;
-    height: 100%;
-    color: #40916C;
-    font-family: "Bebas Neue", serif;
-    font-weight: 400;
-    font-size: clamp(37.5px, 7.5vw,144.05px);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "h p"
+    "h b"
+    ". ."
+    ". .";
 }
 
-main button {
-    grid-area: 2 / 2 / 3 / 3;
-    margin: 0px;
-    /* width: 600px; */
-    width: 39.063vw;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+#home-content h1 {
+    margin: 0;
+    padding: 0;
+    grid-area: h;
+    width: 380px;
+    font-family: var(--ff-large);
+    color: var(--green6);
+    font-weight: 400;
+    font-size: 108px;
+}
+
+#home-content p {
+    grid-area: p;
+    width: 600px;
+    font-family: var(--ff-primary);
+    color: white;
+    text-shadow: var(--std-shadow);
+    font-weight: bold;
+    font-size: 38px;
+}
+#home-content a {
+    grid-area: b;
+    align-self: end;
+    margin-bottom: 30px;
+}
+
+#home-content button {
+    /* grid-area: b;
+    align-self: end; */
+    width: 600px;
+    height: 80px;
+    background-color: var(--green8);
+    box-shadow: var(--std-shadow);
 
     border: none;
     border-radius: 20px;
-    /* padding: 15px 38px 15px 37px; */
-    padding: 1.896vh 2.474vw 1.896vh 2.409vw;
-    background-color: #1B4332;
 
-    font-family: "Quicksand", serif;
-    /* font-size: 35px; */
-    font-size: 2.279vw;
+    font-family: var(--ff-primary);
     font-weight: bold;
     color: white;
-
-    cursor: pointer;
-
-}
-
-main p {
-    grid-area: 1 / 2 / 2 / 3;
-    margin: 0px;
-    padding: 0px;
-    align-self: start;
+    font-size: 40px;
+    text-shadow: var(--std-shadow);
     
-    color: white;
-    font-family: "Quicksand", serif;
-    font-weight: bold;
-    /* font-size: 38px; */
-    font-size: 2.474vw;
-    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
+
+/* ----Information Page---- */
+
+
+/* ----media queries---- */
+
+/* Remove header-logo from navbar when screen less than 750px */
+@media only screen and (max-width: 750px) {
+    #header-logo {
+        display: none;
+    }
+}
+
+/* Collapse home-content grid when screen less than 1000px */
+/* @media only screen and (max-width: 1000px) {
+    #home-content h1 {
+        grid-area: 1 / 1 / 2 / 3;
+        margin: 10px auto;
+        
+    }
+    #home-content p {
+        margin: 10px 10px;
+        grid-row: 3 / 4;
+        grid-column: 1 / -1;
+    }
+    
+    #home-content button {
+        margin: 10px 10px;
+        margin: auto;
+        grid-row: 4 / -1;
+        grid-column: 1 / -1;
+    }
+} */
+
+
+
