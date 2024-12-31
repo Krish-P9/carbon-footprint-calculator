@@ -350,8 +350,30 @@ input[type="checkbox"]:checked {
     text-shadow:var(--std-shadow)
 }
 
-/* ----Transportation page---- */
+/* ----Waste Management page---- */
 
+.waste-management-content-checks {
+    display: flex;
+}
+
+#waste-management-content-check1 {
+    margin-left: 20px;
+    margin-right: auto;
+}
+#waste-management-content-check2 {
+    margin-left: 15px;
+    margin-right: auto;
+}
+
+/* ----Food page---- */
+
+#food-content-checks {
+    margin-top: 20px; 
+}
+
+#food-content-check1 {
+    margin-left: 15px;
+}
 
 
 /* ----media queries---- */
