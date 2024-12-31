@@ -141,6 +141,8 @@ header .sign-in-btn {
 
 .main-bg {
     background: var(--bg-clr);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Calculator Navigation Buttons */
@@ -258,6 +260,7 @@ header .sign-in-btn {
 
 .content-dropdown {
     width: 100%;
+    margin: 20px 0px 5px 0px;
     box-shadow: var(--std-shadow);
     border-radius: 7px;
     border: 1px solid rgba(179, 179, 179, 0.45);
@@ -303,6 +306,38 @@ header .sign-in-btn {
     position: relative;
     top: 50%;
     transform:translateY(-50%);
+}
+
+.content-checkbox {
+    transform: scale(1.25);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--green6);
+}
+
+
+/* input[type="checkbox"] {   
+    appearance: none;
+    -webkit-appearance: none;
+    accent-color: var(--green6);
+    width: 20px;
+    height: 20px;
+    border: 1.25px solid var(--green6);
+    background: white;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--green6)
+} */
+
+
+.content-label {
+    font-family:var(--ff-primary);
+    font-size:var(--regular-size);
+    color: var(--green8);
+    text-shadow:var(--std-shadow)
 }
 
 /* ----Energy Page---- */
