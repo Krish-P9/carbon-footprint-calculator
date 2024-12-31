@@ -264,7 +264,9 @@ header .sign-in-btn {
     font-family: var(--ff-primary);
     font-size: var(--regular-size);
     text-shadow: var(--std-shadow);
+    width: 600px;
 }
+
 
 #energy-main > #heating {
     font-family: var(--ff-primary);
@@ -274,10 +276,38 @@ header .sign-in-btn {
 }
 
 #energy-main > #slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255,255,255,0);
     width: 600px;
-    height: 20px;
 }
 
+#energy-main > #slider::-webkit-slider-runnable-track {
+    height: 20px;
+    background: white;
+    border-radius: 10px;
+    
+}
+
+#energy-main > #slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: var(--green9);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+#sliderValue {
+    font-family: var(--ff-primary);
+    font-size: var(--regular-size);
+    text-shadow: var(--std-shadow);
+    color: white;
+}
 
 /* ----Transportation page---- */
 .content-title {

@@ -25,9 +25,6 @@
             </nav>
             <button class="hover-select sign-in-btn">Sign In</button>
         </header>
-        <nav>
-            <a href="transportation.html"><button class="next-calculator-btn hover-select"><p>→</p></button></a>
-        </nav>
         <main id="energy-main">
             <h1>Energy Use</h1>
             <h2>Electricity</h2>
@@ -40,9 +37,14 @@
                     <option value="Propane">Propane</option>
                 </select>
             <h2>Renewable Sources</h2>
-                <p>Percent of electricity from renewable sources</p>
-                <input type="range" min="0" max="100" value="0" id="slider">
-                <p>value</p>
+                <p id="sliderValue">Percent of electricity from renewable sources: 0</p>
+                <input type="range" min="0" max="100" value="0" id="slider" oninput="updateValue()">
+                <script>
+                    function updateValue(){
+                        let x = document.getElementById("slider").value;
+                        document.getElementById("sliderValue").innerHTML = "Percent of electricity from renewable sources: " + x;
+                    }
+                </script>
         </main>
     </body>
 </html>
