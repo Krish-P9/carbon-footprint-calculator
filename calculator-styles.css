@@ -16,8 +16,17 @@
     --navbar-select-clr: var(--green1);
     --navbar-selct-bg-clr: rgba(217, 217, 217, 0.1);
 
-    --std-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
+    --title-size: 75px;
+    --subtitle-size: 50px;
+    --regular-size: 25px;
 
+    --ff-main-content-title: var(--ff-large);
+    --ff-main-content-q: var(--ff-primary);
+
+    --font-size-main-title: 41px;
+
+    --std-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
+    --std-shadow-thick: 2px 2px 4px rgba(0, 0, 0, 0.25), -2px -2px 4px rgba(255, 255, 255, 0.025);
     --bg-clr: linear-gradient(101.82deg, #D8F3DC 36.82%, #95D5B2 99.94%);
 
     --placeholder-clr: rgba(179, 179, 179, 0.85);
@@ -128,11 +137,104 @@ header .sign-in-btn {
 }
 
 .hover-select:hover {
-    filter: brightness(90%);
+    filter: brightness(85%);
 }
 
 .main-bg {
     background: var(--bg-clr);
+}
+
+/* Calculator Navigation Buttons */
+.back-calculator-btn {
+    display: flex;
+    position: fixed;
+    top: 340px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 0px;
+    background: var(--green8);
+    border: none;
+    box-shadow: var(--std-shadow-thick);
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    color: white;
+    text-shadow: var(--std-shadow);
+    font-family: var(--ff-primary);
+    font-size: 34px;
+}
+
+.back-calculator-btn  p {
+    margin-bottom: 4px;
+}
+
+.next-calculator-btn {
+    display: flex;
+    position: fixed;
+    top: 340px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 0px;
+    background: var(--green8);
+    border: none;
+    box-shadow: var(--std-shadow-thick);
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    color: white;
+    text-shadow: var(--std-shadow);
+    font-family: var(--ff-primary);
+    font-size: 34px;
+}
+
+.next-calculator-btn  p {
+    margin-bottom: 4px;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: cover;
+}
+
+.content-title {
+    font-family: var(--ff-main-content-title);
+    font-size: var(--font-size-main-title);
+    color: #1B4332;
+}
+
+.content-q-title {
+    margin: 70px 0px 20px 0px;
+    font-family: var(--ff-main-content-q);
+    color: white;
+    text-shadow: var(--std-shadow);
+}
+
+.content-input {
+    box-shadow: var(--std-shadow);
+    font-family: var(--ff-primary);
+    font-size: var(--regular-size);
+    text-shadow: var(--std-shadow);
+    width: 600px;
+    border-radius: 7px;
+    border: 1px solid rgba(179, 179, 179, 0.45);
+    padding: 4px 12px;
+}
+
+.content-input:focus{
+    outline: none;
+}
+.content-input::placeholder {
+    color: rgba(179, 179, 179, 1);
 }
 
 /* ----Energy Page---- */
@@ -174,4 +276,28 @@ header .sign-in-btn {
 #energy-main > #slider {
     width: 600px;
     height: 20px;
+}
+
+
+/* ----Transportation page---- */
+.content-title {
+    font-family: var(--ff-main-content-title);
+    font-size: var(--font-size-main-title);
+    color: #1B4332;
+}
+
+.content-q-title {
+    font-family: var(--ff-main-content-q);
+    color: white;
+    text-shadow: var(--std-shadow);
+}
+
+
+/* ----media queries---- */
+
+/* Remove header-logo from navbar when screen less than 750px */
+@media only screen and (max-width: 750px) {
+    #header-logo {
+        display: none;
+    }
 }
