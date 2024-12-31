@@ -308,6 +308,38 @@ header .sign-in-btn {
     transform:translateY(-50%);
 }
 
+.content-checkbox {
+    transform: scale(1.25);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--green6);
+}
+
+
+/* input[type="checkbox"] {   
+    appearance: none;
+    -webkit-appearance: none;
+    accent-color: var(--green6);
+    width: 20px;
+    height: 20px;
+    border: 1.25px solid var(--green6);
+    background: white;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--green6)
+} */
+
+
+.content-label {
+    font-family:var(--ff-primary);
+    font-size:var(--regular-size);
+    color: var(--green8);
+    text-shadow:var(--std-shadow)
+}
+
 /* ----Energy Page---- */
 
 #sliderValue {
