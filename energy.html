@@ -29,24 +29,26 @@
             <a href="transportation.html"><button class="next-calculator-btn hover-select"><p>→</p></button></a>
         </nav>
         <main id="energy-main" class="main-content">
-            <h1 class="content-title">Energy Use</h1>
-            <h2 class="content-q-title">Electricity</h2>
-                <input type='text' id="electricity" class="content-input" placeholder="kWh per month">
-            <h2 class="content-q-title">Heating</h2>
-                <select id="heating" class="content-dropdown">
-                    <option value="Natural Gas">Natural Gas</option>
-                    <option value="Oil">Oil</option>
-                    <option value="Propane">Propane</option>
-                </select>
-            <h2 class="content-q-title">Renewable Sources</h2>
-                <p id="sliderValue">Percent of electricity from renewable sources: 0</p>
-                <input type="range" min="0" max="100" value="0" id="slider" class="content-slider" oninput="updateValue()">
-                <script>
-                    function updateValue(){
-                        let x = document.getElementById("slider").value;
-                        document.getElementById("sliderValue").innerHTML = "Percent of electricity from renewable sources: " + x;
-                    }
-                </script>
+            <div class="main-content-container">
+                <h1 class="content-title">Energy Use</h1>
+                <h2 class="content-q-title">Electricity</h2>
+                    <input type='text' id="electricity" class="content-input" placeholder="kWh per month">
+                <h2 class="content-q-title">Heating</h2>
+                    <select id="heating" class="content-dropdown">
+                        <option value="Natural Gas">Natural Gas</option>
+                        <option value="Oil">Oil</option>
+                        <option value="Propane">Propane</option>
+                    </select>
+                <h2 class="content-q-title">Renewable Sources</h2>
+                    <p id="sliderValue">Electricity from renewable sources: 0%</p>
+                    <input type="range" min="0" max="100" value="0" id="slider" class="content-slider" oninput="updateValue()">
+                    <script>
+                        function updateValue(){
+                            let x = document.getElementById("slider").value;
+                            document.getElementById("sliderValue").innerHTML = "Electricity from renewable sources: " + x + "%";
+                        }
+                    </script>
+            </div>
         </main>
     </body>
 </html>

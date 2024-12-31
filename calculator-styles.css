@@ -16,14 +16,13 @@
     --navbar-select-clr: var(--green1);
     --navbar-selct-bg-clr: rgba(217, 217, 217, 0.1);
 
-    --title-size: 75px;
-    --subtitle-size: 50px;
     --regular-size: 25px;
 
     --ff-main-content-title: var(--ff-large);
     --ff-main-content-q: var(--ff-primary);
 
-    --font-size-main-title: 41px;
+    --font-size-main-title: 80px;
+    --font-size-main-q: 35px;
 
     --std-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
     --std-shadow-thick: 2px 2px 4px rgba(0, 0, 0, 0.25), -2px -2px 4px rgba(255, 255, 255, 0.025);
@@ -167,7 +166,7 @@ header .sign-in-btn {
     font-size: 34px;
 }
 
-.back-calculator-btn  p {
+.back-calculator-btn > p {
     margin-bottom: 4px;
 }
 
@@ -193,7 +192,7 @@ header .sign-in-btn {
     font-size: 34px;
 }
 
-.next-calculator-btn  p {
+.next-calculator-btn > p {
     margin-bottom: 4px;
 }
 
@@ -206,28 +205,37 @@ header .sign-in-btn {
     height: cover;
 }
 
-.content-title {
-    font-family: var(--ff-main-content-title);
-    font-size: var(--font-size-main-title);
-    color: #1B4332;
-}
-
 .main-content-container {
+    width: 700px;
     margin-bottom: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: cover;    
 }
+
+.content-title {
+    font-family: var(--ff-main-content-title);
+    font-size: var(--font-size-main-title);
+    color: #1B4332;
+}
+
 .content-q-title {
+    padding: 2px 4px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(64, 145, 108, 0.2);
+
     margin: 70px 0px 20px 0px;
     font-family: var(--ff-main-content-q);
+    font-size: var(--font-size-main-q);
     color: white;
     text-shadow: var(--std-shadow);
 }
 
 .content-input {
-    width: clamp(400px 100% 700px);
+    box-sizing: border-box; 
+    width: 100%;
     margin: 20px 0px 5px 0px;
     box-shadow: var(--std-shadow);
     font-family: var(--ff-primary);
@@ -240,10 +248,6 @@ header .sign-in-btn {
 
 .content-input:focus{
     outline: none;
-}
-
-.content-input:focus{
-    color: black;
     text-shadow: none;
 }
 
@@ -253,17 +257,33 @@ header .sign-in-btn {
 }
 
 .content-dropdown {
+    width: 100%;
+    box-shadow: var(--std-shadow);
+    border-radius: 7px;
+    border: 1px solid rgba(179, 179, 179, 0.45);
+    padding: 4px 12px;
+
+    color: rgba(179, 179, 179, 1);
     font-family: var(--ff-primary);
     font-size: var(--regular-size);
-    text-shadow: var(--std-shadow);
-    width: 200px;
+    text-shadow: none;
+}
+
+.content-dropdown::placeholder {
+    color: rgba(179, 179, 179, 1);
+    text-shadow: none;
+}
+
+.content-dropdown:focus{
+    outline: none;
+    text-shadow: none;
 }
 
 .content-slider {
     -webkit-appearance: none;
     appearance: none;
     background: rgba(255,255,255,0);
-    width: 600px;
+    width: 100%;
 }
 
 .content-slider::-webkit-slider-runnable-track{
@@ -288,82 +308,12 @@ header .sign-in-btn {
 /* ----Energy Page---- */
 
 #sliderValue {
+    margin-top: 15px;
     font-family:var(--ff-primary);
     font-size:var(--regular-size);
-    color:white;
-    text-shadow:var(--std-shadow)
-
-}
-/* 
-#energy-main {
-    text-align: center;
-}
-
-#energy-main > h1 {
     color: var(--green8);
-    font-family: var(--ff-large);
-    text-shadow: var(--std-shadow);
-    text-align: center;
-    font-size: var(--title-size);
-    margin-top: 50px;
+    text-shadow:var(--std-shadow)
 }
-
-#energy-main > h2 {
-    color: white;
-    font-family: var(--ff-primary);
-    text-shadow: var(--std-shadow);
-    text-align: center;
-    font-size: var(--subtitle-size);
-}
-
-#energy-main > #electricity {
-    font-family: var(--ff-primary);
-    font-size: var(--regular-size);
-    text-shadow: var(--std-shadow);
-    width: 600px;
-}
-
-
-#energy-main > #heating {
-    font-family: var(--ff-primary);
-    font-size: var(--regular-size);
-    text-shadow: var(--std-shadow);
-    width: 200px;
-}
-
-#energy-main > #slider {
-    -webkit-appearance: none;
-    appearance: none;
-    background: rgba(255,255,255,0);
-    width: 600px;
-}
-
-#energy-main > #slider::-webkit-slider-runnable-track {
-    height: 20px;
-    background: white;
-    border-radius: 10px;
-    
-}
-
-#energy-main > #slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 30px;
-    height: 30px;
-    background: var(--green9);
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    top: 50%;
-    transform:translateY(-50%);
-}
-
-#sliderValue {
-    font-family: var(--ff-primary);
-    font-size: var(--regular-size);
-    text-shadow: var(--std-shadow);
-    color: white;
-} */
 
 /* ----Transportation page---- */
 
@@ -375,5 +325,20 @@ header .sign-in-btn {
 @media only screen and (max-width: 750px) {
     #header-logo {
         display: none;
+    }
+
+    .content-input {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .content-slider {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .content-dropdown {
+        width: 100%;
+        max-width: 400px;
     }
 }
