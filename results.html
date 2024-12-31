@@ -30,10 +30,62 @@
         </nav>
         <main id="transportation-content" class="main-content">
             <div class="main-content-container">
-                <h1 class="content-title">results</h1>
-                <h2 class="content-q-title">Public transportation</h1>
-                <input type='text' class="content-input" placeholder="kWh per month">
-                <input type='text' class="content-input" placeholder="kWh per month">
+                <h1 class="content-title">Results</h1>
+                <div class="info-block">
+                    <h2 class="info-block-subtitle">Great job taking the first step! Your carbon footprint count is:</h2>
+                    <p class="info-block-text-large" id="carbon-footprint">209 kg CO₂</p>
+                </div>
+                <div class="info-block">
+                    <h2 class="info-block-text">Energy Use: </h2>
+                    <h2 class="info-block-text">Transportation: </h2>
+                    <h2 class="info-block-text">Waste Management: </h2>
+                    <h2 class="info-block-text">Water Usage: </h2>
+                    <h2 class="info-block-text">Food: </h2>
+                    <h2 class="info-block-text">Household-size: </h2>
+                </div>
+                <div class="info-block">
+                    <div id="piechart"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                        google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawChart);
+                    
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                                ['Factor', 'Carbon Footrpint Count'],
+                                ['Energy Use', 8],
+                                ['Transportation', 2],
+                                ['Waste Management', 2],
+                                ['Water Usage', 2],
+                                ['Food', 2],
+                                ['Household-size', 8]
+                            ]);
+                    
+                            var options = {
+                                'width': 740,
+                                'height': 400,
+                                'backgroundColor': 'transparent',  // Transparent background
+                                'chartArea': {
+                                    'backgroundColor': 'transparent'  // Transparent chart area
+                                },
+                                'pieSliceText': 'percentage',  // Display percentage on pie slices
+                                'slices': {
+                                    0: { 'offset': 0.1, 'color': '#B7E4C7' },  // Color of the first slice
+                                    1: { 'color': '#95D5B2' },  // Color of the second slice
+                                    2: { 'color': '#74C69D' },  // Color of the third slice
+                                    3: { 'color': '#52B788' },  // Color of the fourth slice
+                                    4: { 'color': '#40916C' },  // Color of the fifth slice
+                                    5: { 'color': '#2D6A4F' },  // Color of the sixth slice
+                                    6: { 'color': '#1B4332' }   // Color of the seventh slice
+                                    // You can add more slices and colors if needed
+                                }
+                            };
+                    
+                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                            chart.draw(data, options);
+                        }
+                    </script>
+                </div>
             </div>
         </main>
     </body>

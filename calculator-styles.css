@@ -9,15 +9,16 @@
     --green8: #1B4332;
     --green9: #081C15;
 
+    /* Navbar */
     --ff-primary: "Quicksand", serif;
     --ff-large: "Bebas Neue", serif;
     --font-size-main-navbar: 20px;
-
     --navbar-select-clr: var(--green1);
     --navbar-selct-bg-clr: rgba(217, 217, 217, 0.1);
 
     --regular-size: 25px;
 
+    /* Main Content */
     --ff-main-content-title: var(--ff-large);
     --ff-main-content-q: var(--ff-primary);
 
@@ -29,6 +30,9 @@
     --bg-clr: linear-gradient(101.82deg, #D8F3DC 36.82%, #95D5B2 99.94%);
 
     --placeholder-clr: rgba(179, 179, 179, 0.85);
+
+    /* Results Page */
+    --font-size-info-block-large: 90px
 }
 
 * {
@@ -145,7 +149,7 @@ header .sign-in-btn {
     background-attachment: fixed;
 }
 
-/* Calculator Navigation Buttons */
+/* Calculator Section Navigation Buttons */
 .back-calculator-btn {
     display: flex;
     position: fixed;
@@ -198,7 +202,8 @@ header .sign-in-btn {
     margin-bottom: 4px;
 }
 
-/* Main Content */
+/* ----Main Content---- */
+
 .main-content {
     margin-top: 30px;
     display: flex;
@@ -312,26 +317,15 @@ header .sign-in-btn {
     transform: scale(1.25);
 }
 
+.content-backdrop {
+    margin: 70px 0px 20px 0px;
+    width: 100%;
+    height: fit-content;
+}
+
 input[type="checkbox"] {
     accent-color: var(--green6);
 }
-
-
-/* input[type="checkbox"] {   
-    appearance: none;
-    -webkit-appearance: none;
-    accent-color: var(--green6);
-    width: 20px;
-    height: 20px;
-    border: 1.25px solid var(--green6);
-    background: white;
-    cursor: pointer;
-}
-
-input[type="checkbox"]:checked {
-    background-color: var(--green6)
-} */
-
 
 .content-label {
     font-family:var(--ff-primary);
@@ -375,10 +369,54 @@ input[type="checkbox"]:checked {
     margin-left: 15px;
 }
 
+/* ----Results Page---- */
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0px 20px 0px;
+    width: 100%;
+    height: fit-content;
+    
+    background: rgba(64, 145, 108, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+
+}
+
+.info-block-subtitle {
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: var(--ff-primary);
+    font-size: var(--font-size-main-q);
+    color: white;
+    text-shadow: var(--std-shadow);
+}
+
+.info-block-text {
+    font-family: var(--ff-primary);
+    font-size: var(--font-size-main-q);
+    color: white;
+    text-shadow: var(--std-shadow);
+    margin-right: auto;
+}
+
+.info-block-text-large {
+    font-family: var(--ff-primary);
+    font-size: var(--font-size-info-block-large);
+    font-weight: bold;
+    color: white;
+    text-shadow: var(--std-shadow);
+}
+
+#piechart {
+    overflow: hidden;    /* Ensure the chart's contents stay within the rounded corners */
+}
 
 /* ----media queries---- */
 
-/* Remove header-logo from navbar when screen less than 750px */
+/* Responsitivity for elements when screen less than 750px */
 @media only screen and (max-width: 750px) {
     #header-logo {
         display: none;
@@ -395,6 +433,11 @@ input[type="checkbox"]:checked {
     }
 
     .content-dropdown {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .info-block {
         width: 100%;
         max-width: 400px;
     }
