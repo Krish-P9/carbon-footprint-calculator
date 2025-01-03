@@ -41,12 +41,22 @@
                     </select>
                     <input type='text' class="content-input inputs inputs" placeholder="therms (natural gas) litres (if oil/propane)">
                 <h2 class="content-q-title">Renewable Sources</h2>
-                    <p id="sliderValue">Electricity from renewable sources: 0%</p>
+                    <script>var sliderVal = localStorage.getItem('slider')
+                            if (sliderVal) {
+                                var value = sliderVal
+                            } else {
+                                var value = 0
+                            }
+                    </script>
+                    <p id="sliderValue">Electricity from renewable sources: </p>
+                    <script>document.getElementById("sliderValue").innerHTML += value;
+                    </script>
                     <input type="range" min="0" max="100" value="0" id="slider" class="content-slider inputs" oninput="updateValue()">
                     <script>
                         function updateValue(){
                             let x = document.getElementById("slider").value;
                             document.getElementById("sliderValue").innerHTML = "Electricity from renewable sources: " + x + "%";
+                            localStorage.setItem('slider', x)
                         }
                     </script>
                     <script src="./scripts/index.js"></script>
