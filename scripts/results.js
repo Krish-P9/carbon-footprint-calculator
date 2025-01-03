@@ -82,3 +82,15 @@ wasteEmission = waste + recycleSaved + compostSaved
 
 
 //Water Usage
+
+{/* <script>
+        dict = JSON.parse(localStorage.getItem('calculatorData'))
+        energyUse = dict['energyPage']
+        transporation = dict['transportationPage']
+        // wasteManagement = dict[wasteManagementPage]
+        // waterUsage = dict[waterUsagePage]
+        // food = dict[foodPage]
+        // householdSize = dict[householdSizePage]
+        // console.log(JSON.parse(localStorage.getItem('calculatorData')))
+        console.log(transporation)
+    </script> */}
