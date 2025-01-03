@@ -9,6 +9,15 @@
     --green8: #1B4332;
     --green9: #081C15;
 
+    --charcoal1: #D3DDDD;
+    --charcoal2: #A9A9A9;
+    --charcoal3: #808080;
+    --charcoal4: #606060;
+    --charcoal5: #404040;
+    --charcoal6: #2F2F2F;
+    --charcoal7: #1F1F1F;
+    --charcoal8: #121212;
+
     /* Navbar */
     --ff-primary: "Quicksand", serif;
     --ff-large: "Bebas Neue", serif;
@@ -225,6 +234,7 @@ header .sign-in-btn {
     font-family: var(--ff-main-content-title);
     font-size: var(--font-size-main-title);
     color: #1B4332;
+    text-shadow: var(--std-shadow-thick);
 }
 
 .content-q-title {

@@ -166,6 +166,7 @@ header .sign-in-btn {
     color: var(--green6);
     font-weight: 400;
     font-size: 108px;
+    text-shadow: var(--std-shadow);
 }
 
 #home-content p {
