@@ -15,7 +15,7 @@ function saveInputsOrderedAsDict() {
 
         if (input.type === 'checkbox') { // if checkbox input
             inputData[key] = input.checked
-        } else { // if regular input
+        } else { // if regular input 
             inputData[key] = input.value
         }
     })
