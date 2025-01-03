@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel="stylesheet" href="calculator-styles.css">
+         <link rel="stylesheet" href="./styles/calculator-styles.css">
          <!-- Icon and Title -->
           <link rel="icon" href="images/icon-logo.png" >
          <title>CarbonCount</title>
@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     </head>
-    <body class="main-bg">
+    <body class="main-bg" id="energyPage">
         <header>
             <a href="#"><img href="#" id="header-logo"src="./images/white-logo.png" alt="White Logo"></a>
             <nav class="primary-navbar">
@@ -26,29 +26,30 @@
             <button class="hover-select sign-in-btn">Sign In</button>
         </header>
         <nav>
-            <a href="transportation.html"><button class="next-calculator-btn hover-select"><p>→</p></button></a>
+            <a href="transportation.html"><button id="next-save-btn" class="next-calculator-btn hover-select"><p>→</p></button></a>
         </nav>
         <main id="energy-main" class="main-content">
             <div class="main-content-container">
                 <h1 class="content-title">Energy Use</h1>
                 <h2 class="content-q-title">Electricity</h2>
-                    <input type='text' id="electricity" class="content-input" placeholder="kWh per month">
+                    <input type='text' class="content-input inputs" placeholder="kWh per month">
                 <h2 class="content-q-title">Heating</h2>
-                    <select id="heating" class="content-dropdown">
+                    <select class="content-dropdown inputs">
                         <option value="Natural Gas">Natural Gas</option>
                         <option value="Oil">Oil</option>
                         <option value="Propane">Propane</option>
                     </select>
-                    <input type='text' id="electricity" class="content-input" placeholder="therms (natural gas) litres (if oil/propane)">
+                    <input type='text' class="content-input inputs inputs" placeholder="therms (natural gas) litres (if oil/propane)">
                 <h2 class="content-q-title">Renewable Sources</h2>
                     <p id="sliderValue">Electricity from renewable sources: 0%</p>
-                    <input type="range" min="0" max="100" value="0" id="slider" class="content-slider" oninput="updateValue()">
+                    <input type="range" min="0" max="100" value="0" id="slider" class="content-slider inputs" oninput="updateValue()">
                     <script>
                         function updateValue(){
                             let x = document.getElementById("slider").value;
                             document.getElementById("sliderValue").innerHTML = "Electricity from renewable sources: " + x + "%";
                         }
                     </script>
+                    <script src="./scripts/index.js"></script>
             </div>
         </main>
     </body>
