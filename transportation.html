@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel="stylesheet" href="calculator-styles.css">
+         <link rel="stylesheet" href="./styles/calculator-styles.css">
          <!-- Icon and Title -->
           <link rel="icon" href="images/icon-logo.png" >
          <title>CarbonCount</title>
@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     </head>
-    <body class="main-bg">
+    <body class="main-bg" id="transportationPage">
         <header>
             <a href="#"><img href="#" id="header-logo"src="./images/white-logo.png" alt="White Logo"></a>
             <nav class="primary-navbar">
@@ -26,27 +26,28 @@
             <button class="hover-select sign-in-btn">Sign In</button>
         </header>
         <nav>
-            <a href="energy.html"><button class="back-calculator-btn hover-select"><p>←</p></button></a>
-            <a href="waste-management.html"><button class="next-calculator-btn hover-select"><p>→</p></button></a>
+            <a href="energy.html"><button id="back-save-btn" class="back-calculator-btn hover-select"><p>←</p></button></a>
+            <a href="waste-management.html"><button id="next-save-btn" class="next-calculator-btn hover-select"><p>→</p></button></a>
         </nav>
         <main id="transportation-content" class="main-content">
             <div class="main-content-container">
                 <h1 class="content-title">Transportation</h1>
                 <h2 class="content-q-title">Public transportation</h1>
-                <input type='text' class="content-input" placeholder="Distance travelled by bus">
-                <input type='text' class="content-input" placeholder="Distance travelled by train">
+                <input type='text' class="content-input inputs" placeholder="Distance travelled by bus">
+                <input type='text' class="content-input inputs" placeholder="Distance travelled by train">
                 <h1 class="content-q-title">Vehicle</h1>
-                <input type='text' class="content-input" placeholder="Distance travelled today">
-                <input type='text' class="content-input" placeholder="Fuel efficiency">
-                <select id="heating" class="content-dropdown">
+                <input type='text' class="content-input inputs" placeholder="Distance travelled today">
+                <input type='text' class="content-input inputs" placeholder="Fuel efficiency">
+                <select id="heating" class="content-dropdown inputs">
                     <option value="Gasoline">Gasoline</option>
                     <option value="Diesel">Diesel</option>
                     <option value="Electric">Electric</option>
                     <option value="Hybrid">Hybrid</option>
                 </select>
                 <h2 class="content-q-title">Flights</h1>
-                <input type='text' class="content-input" placeholder="Avg monthly travel distance">
+                <input type='text' class="content-input inputs" placeholder="Avg monthly travel distance">
             </div>
         </main>
     </body>
+    <script src="./scripts/index.js"></script>
 </html>
