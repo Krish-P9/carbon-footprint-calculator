@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     </head>
-    <body class="main-bg">
+    <body class="main-bg" id="householdSizePage">
         <header>
             <a href="#"><img href="#" id="header-logo"src="./images/white-logo.png" alt="White Logo"></a>
             <nav class="primary-navbar">
@@ -26,16 +26,17 @@
             <button class="hover-select sign-in-btn">Sign In</button>
         </header>
         <nav>
-            <a href="food.html"><button class="back-calculator-btn hover-select"><p>←</p></button></a>
-            <a href="results.html"><button class="next-calculator-btn hover-select"><p>→</p></button></a>
+            <a href="food.html"><button id="back-save-btn" class="back-calculator-btn hover-select"><p>←</p></button></a>
+            <a href="results.html"><button id="next-save-btn" class="next-calculator-btn hover-select"><p>→</p></button></a>
         </nav>
         <main id="transportation-content" class="main-content">
             <div class="main-content-container">
                 <h1 class="content-title">household-size</h1>
                 <h2 class="content-q-title">People</h1>
-                <input type='text' class="content-input" placeholder="# of people in household">
-                <input type='text' class="content-input" placeholder="Size of home (sq ft)">
+                <input type='text' class="content-input inputs" placeholder="# of people in household">
+                <input type='text' class="content-input inputs" placeholder="Size of home (sq ft)">
                 </div>
         </main>
     </body>
+    <script src="./scripts/index.js"></script>
 </html>

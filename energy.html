@@ -56,11 +56,11 @@
                         function updateValue(){
                             let x = document.getElementById("slider").value;
                             document.getElementById("sliderValue").innerHTML = "Electricity from renewable sources: " + x + "%";
-                            localStorage.setItem('slider', x)
+                            localStorage.setItem('slider', x + "%")
                         }
                     </script>
-                    <script src="./scripts/index.js"></script>
             </div>
         </main>
     </body>
+    <script src="./scripts/index.js"></script>
 </html>

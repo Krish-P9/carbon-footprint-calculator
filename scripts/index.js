@@ -1,7 +1,3 @@
-// const electricityInpt = document.getElementById("electricity-inpt")
-// const heatingMthdInpt = document.getElementById("heating-mthd-inpt")
-// const heatingAmntInpt = document.getElementById("heating-amnt-inpt")
-// const electricityRenewableInpt = document.getElementById("electricity-renewable-inpt")
 const nextSaveBtn = document.getElementById("next-save-btn")
 const backSaveBtn = document.getElementById("back-save-btn")
 let formData = {}
@@ -16,7 +12,12 @@ function saveInputsOrderedAsDict() {
 
     inputs.forEach((input, index) => {
         const key = `input${index + 1}`
-        inputData[key] = input.value
+
+        if (input.type === 'checkbox') { // if checkbox input
+            inputData[key] = input.checked
+        } else { // if regular input
+            inputData[key] = input.value
+        }
     })
 
     return inputData
@@ -29,14 +30,18 @@ function saveData(page) {
 }
 
 function loadData(page) {
-    if (formData || formData[page]) {
+    if (formData && formData[page]) {
         const pageData = formData[page]
         const inputs = document.querySelectorAll(".inputs")
 
         inputs.forEach((input, index) => {
             const key = `input${index + 1}`
             if (pageData[key]) {
-                input.value = pageData[key]
+                if (input.type === 'checkbox') { // if checkbox input
+                    input.checked = pageData[key]
+                } else {
+                    input.value = pageData[key] // if regular input
+                }
             }
         })
     }
