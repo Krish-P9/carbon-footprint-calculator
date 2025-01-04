@@ -32,25 +32,35 @@
             <div class="main-content-container">
                 <h1 class="content-title">Results</h1>
                 <div class="info-block">
-                    <h2 class="info-block-subtitle">Great job taking the first step! Your carbon footprint count is:</h2>
-                    <p class="info-block-text-large" id="carbon-footprint">209 kg CO₂</p>
+                    <h2 class="info-block-subtitle">Congrats! By counting your carbon footprint you’ve taken the first step to a greener future.</h2>
                 </div>
                 <div class="info-block">
-                    <h2 class="info-block-text">Energy Use: </h2>
-                    <h2 class="info-block-text">Transportation: </h2>
-                    <h2 class="info-block-text">Waste Management: </h2>
-                    <h2 class="info-block-text">Water Usage: </h2>
-                    <h2 class="info-block-text">Food: </h2>
-                    <h2 class="info-block-text">Household-size: </h2>
+                    <h2 class="info-block-subtitle">Your Carbon Footprint:</h2>
+                    <p class="info-block-text-large info-block-text-final-value" id="your-carbon-footprint"></p>
+                    <h2 class="info-block-text" id="your-carbon-footprint-energy">Energy Use: </h2>
+                    <h2 class="info-block-text" id="your-carbon-footprint-transportation">Transportation: </h2>
+                    <h2 class="info-block-text" id="your-carbon-footprint-waste">Waste Management: </h2>
+                    <h2 class="info-block-text" id="your-carbon-footprint-water">Water Usage: </h2>
+                    <h2 class="info-block-text" id="your-carbon-footprint-food">Food: </h2>
                 </div>
                 <div class="info-block">
+                    <h2 class="info-block-subtitle">Your Household Carbon Footprint:</h2>
+                    <p class="info-block-text-large info-block-text-final-value" id="your-household-carbon-footprint"></p>
+                    <h2 class="info-block-text" id="your-household-carbon-footprint-energy">Energy Use: </h2>
+                    <h2 class="info-block-text" id="your-household-carbon-footprint-transportation">Transportation: </h2>
+                    <h2 class="info-block-text" id="your-household-carbon-footprint-waste">Waste Management: </h2>
+                    <h2 class="info-block-text" id="your-household-carbon-footprint-water">Water Usage: </h2>
+                    <h2 class="info-block-text" id="your-household-carbon-footprint-food">Food: </h2>
+                </div>
+                <div class="info-block">
+                    <h2 class="info-block-subtitle">Carbon Footprint Metrics:</h2>
                     <div id="piechart"></div>
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                     <script type="text/javascript">
-                      google.charts.load('current', {'packages':['corechart']})
-                      google.charts.setOnLoadCallback(drawChart)
-                
-                      function drawChart() {
+                        google.charts.load('current', {'packages':['corechart']})
+                        google.charts.setOnLoadCallback(drawChart)
+
+                        function drawChart() {
                 
                         var data = google.visualization.arrayToDataTable([
                             ['Factor', 'Carbon Footrpint Count'],
@@ -67,7 +77,6 @@
                             tooltip: {
                                 trigger: 'selection',
                             },
-
                             'width': 740,
                                 'height': 400,
                                 'backgroundColor': 'transparent',  // Transparent background
@@ -85,7 +94,6 @@
                                         // 4: { 'color': '#404040' },
                                         // 5: { 'color': '#2F2F2F' }, 
                                         // 6: { 'color': '#1F1F1F' } 
-
                                         // 0: { 'offset': 0.1, 'color': '#A3D1A1' },  // Green Color of the slices
                                         0: { 'color': '#A3D1A1' },  // Green Color of the slices
                                         1: { 'color': '#82B89E' },
@@ -96,7 +104,6 @@
                                         6: { 'color': '#1B4332' } 
                                         // Additional Slices as needed
                             },
-
                             'legend': {
                                 position: 'right',
                                 alignment: 'center',
@@ -107,7 +114,6 @@
                                     fontName: 'Quicksand'
                                 }
                             },
-
                             pieSliceTextStyle: {
                                 color: 'white',
                                 fontName: 'Quicksand',
@@ -118,7 +124,7 @@
                         var chart = new google.visualization.PieChart(document.getElementById('piechart'))
                 
                         chart.draw(data, options)
-                      }
+                        }
                     </script>
                 </div>
             </div>
