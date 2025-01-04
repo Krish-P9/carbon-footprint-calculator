@@ -17,7 +17,8 @@
     --navbar-selct-bg-clr: rgba(217, 217, 217, 0.1);
 
     --std-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.025);
-
+    --std-shadow-thick: 2px 2px 4px rgba(0, 0, 0, 0.25), -2px -2px 4px rgba(255, 255, 255, 0.025);
+    
     --bg-clr: linear-gradient(101.82deg, #D8F3DC 36.82%, #95D5B2 99.94%);
 
     --placeholder-clr: rgba(179, 179, 179, 0.85);

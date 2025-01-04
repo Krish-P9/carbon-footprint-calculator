@@ -421,7 +421,10 @@ input[type="checkbox"] {
 }
 
 #piechart {
+    font-family: var(--ff-primary);
     overflow: hidden;    /* Ensure the chart's contents stay within the rounded corners */
+    font-weight: 500;
+    text-shadow: var(--std-shadow);
 }
 
 /* ----media queries---- */
@@ -450,5 +453,15 @@ input[type="checkbox"] {
     .info-block {
         width: 100%;
         max-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #header-logo {
+        display: none;
+    }
+
+    .content-input, .content-slider, .content-dropdown, .info-block {
+        width: 100%;
     }
 }
