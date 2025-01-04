@@ -37,13 +37,26 @@
                 <input type='text' class="content-input inputs" placeholder="Distance travelled by train today (km)">
                 <h1 class="content-q-title">Vehicle</h1>
                 <input type='text' class="content-input inputs" placeholder="Distance travelled today (km)">
-                <input type='text' class="content-input inputs" placeholder="Fuel efficiency (km/L)">
                 <select id="heating" class="content-dropdown inputs">
                     <option value="Gasoline">Gasoline</option>
                     <option value="Diesel">Diesel</option>
                     <option value="Electric">Electric</option>
                     <option value="Hybrid">Hybrid</option>
                 </select>
+                <input type='text' class="content-input inputs" id = 'transportationDropdown' placeholder="Fuel Efficiency (km/L)">
+                <script>
+                    let selection = document.querySelector('select')
+                    let result = document.querySelector('#transportationDropdown')
+
+                    selection.addEventListener('change', () => {
+                        if (selection.value == 'Electric') {
+                            result.placeholder = "Energy Efficiency kWh/100km"
+                        } else {
+                            result.placeholder = "Fuel Efficiency (km/L)"
+                        }
+                    //  result.placeholder = selection.options[selection.selectedIndex].text
+                    })
+                 </script>
                 <h2 class="content-q-title">Flights</h1>
                 <input type='text' class="content-input inputs" placeholder="Distance travelled past month (km)">
             </div>
