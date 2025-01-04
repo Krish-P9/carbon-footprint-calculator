@@ -168,7 +168,6 @@ yourHouseholdCarbonFootprintWaste.innerHTML += `${wasteEmission}` + ` kg CO₂`
 yourHouseholdCarbonFootprintWater.innerHTML += `${waterEmission}` + ` kg CO₂`
 yourHouseholdCarbonFootprintFood.innerHTML += `${foodEmission}` + ` kg CO₂`
 
-
 // Pie Chart
 google.charts.load('current', {'packages':['corechart']})
                         google.charts.setOnLoadCallback(drawChart)
@@ -177,12 +176,11 @@ google.charts.load('current', {'packages':['corechart']})
                 
                         var data = google.visualization.arrayToDataTable([
                             ['Factor', 'Carbon Footrpint Count'],
-                            ['Energy Use', 8],
-                            ['Transportation', 2],
-                            ['Waste Management', 2],
-                            ['Water Usage', 2],
-                            ['Food', 2],
-                            ['Household-size', 8]
+                            ['Energy Use', energyEmission],
+                            ['Transportation', transportationEmission],
+                            ['Waste Management', wasteEmission],
+                            ['Water Usage', waterEmission],
+                            ['Food', foodEmission],
                         ])
                 
                         var options = {
@@ -208,13 +206,12 @@ google.charts.load('current', {'packages':['corechart']})
                                         // 5: { 'color': '#2F2F2F' }, 
                                         // 6: { 'color': '#1F1F1F' } 
                                         // 0: { 'offset': 0.1, 'color': '#A3D1A1' },  // Green Color of the slices
-                                        0: { 'color': '#A3D1A1' },  // Green Color of the slices
-                                        1: { 'color': '#82B89E' },
-                                        2: { 'color': '#A2C46E' },
-                                        3: { 'color': '#B0D65B' },
-                                        4: { 'color': '#40916C' },
-                                        5: { 'color': '#2D6A4F' }, 
-                                        6: { 'color': '#1B4332' } 
+                                        0: { 'color': '#82B89E' },  // Green Color of the slices
+                                        1: { 'color': '#A2C46E' },
+                                        2: { 'color': '#B0D65B' },
+                                        3: { 'color': '#40916C' },
+                                        4: { 'color': '#2D6A4F' },
+                                        5: { 'color': '#1B4332' }, 
                                         // Additional Slices as needed
                             },
                             'legend': {
