@@ -2,8 +2,8 @@
 //need to modify transportation.html for fuel efficency for electric cars
 
 let dict = JSON.parse(localStorage.getItem('calculatorData'))
-let energyUse = dict['energyUse']
-let transporation = dict['transportationPage']
+let energyUse = dict['energyPage']
+let transportation = dict['transportationPage']
 let wasteManagement = dict['wasteManagementPage']
 let waterUsage = dict['waterUsagePage']
 let food = dict['foodPage']
@@ -37,7 +37,7 @@ let energyEmission = electricity + heating //per month
 // Transporation
 let bus = transportation['input1']
 let train = transportation['input2']
-let vehicle = transporation['input3']
+let vehicle = transportation['input3']
 let mileage = transportation['input4']
 let typeOfFuel = transportation['input5']
 let flight = transportation['input6']
@@ -58,13 +58,13 @@ switch(typeOfFuel) {
 
 
 let transportationEmissionPerPerson = (bus + train + vehicle) * 20 //20 working days in a month
-transportationEmissionPerPerson = transportationEmission + flight //adding flight emissions, value per person
+transportationEmissionPerPerson += flight //adding flight emissions, value per person
 
 
 // Waste Management
-let waste = wasteManagement[input1]
-let recycle = wasteManagement[input2]
-let compost = wasteManagement[input3]
+let waste = wasteManagement['input1']
+let recycle = wasteManagement['input2']
+let compost = wasteManagement['input3']
 let wasteSaved = 0
 let recycleSaved = 0
 let compostSaved = 0
