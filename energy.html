@@ -39,7 +39,20 @@
                         <option value="Oil">Oil</option>
                         <option value="Propane">Propane</option>
                     </select>
-                    <input type='text' class="content-input inputs inputs" placeholder="therms (if natural gas) litres (if oil/propane)">
+                    <input type='text' class="content-input inputs inputs" id="energyDropdown" placeholder="Select type of heating above">
+                    <script>
+                        let selection = document.querySelector('select')
+                        let result = document.querySelector('#energyDropdown')
+ 
+                        selection.addEventListener('change', () => {
+                            if (selection.value == 'Natural Gas') {
+                                result.placeholder = "Cubic Meters"
+                            } else if (selection.value == 'Oil' || selection.value == 'Propane') {
+                                result.placeholder = "Liters"
+                            }
+                        //  result.placeholder = selection.options[selection.selectedIndex].text
+                        })
+                     </script>
                 <h2 class="content-q-title">Renewable Sources</h2>
                     <script>var sliderVal = localStorage.getItem('slider')
                             if (sliderVal) {

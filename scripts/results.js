@@ -1,3 +1,8 @@
+//need to finish units for energy in results and html page
+//need to modify transportation.html for fuel efficency for electric cars
+
+
+
 dict = JSON.parse(localStorage.getItem('calculatorData'))
 energyUse = dict['energyUse']
 transporation = dict['transportationPage']
