@@ -1,22 +1,20 @@
 //need to finish units for energy in results and html page
 //need to modify transportation.html for fuel efficency for electric cars
 
-
-
-dict = JSON.parse(localStorage.getItem('calculatorData'))
-energyUse = dict['energyUse']
-transporation = dict['transportationPage']
-wasteManagement = dict['wasteManagementPage']
-waterUsage = dict['waterUsagePage']
-food = dict['foodPage']
-householdSize = dict['householdSizePage']
+let dict = JSON.parse(localStorage.getItem('calculatorData'))
+let energyUse = dict['energyUse']
+let transporation = dict['transportationPage']
+let wasteManagement = dict['wasteManagementPage']
+let waterUsage = dict['waterUsagePage']
+let food = dict['foodPage']
+let householdSize = dict['householdSizePage']
 
 
 // Energy Use
-electricity = energyUse['input1']
-heatingType = energyUse['input2']
-heating = energyUse['input3']
-renewableElectricity = energyUse['input4']
+let electricity = energyUse['input1']
+let heatingType = energyUse['input2']
+let heating = energyUse['input3']
+let renewableElectricity = energyUse['input4']
 
 electricity = electricity * 0.47
 
@@ -33,43 +31,43 @@ renewableElectricity = renewableElectricity / 10
 
 electricity = electricity * (1 - renewableElectricity)
 
-energyEmission = electricity + heating //per month
+let energyEmission = electricity + heating //per month
 
 
 // Transporation
-bus = transportation['input1']
-train = transportation['input2']
-vehicle = transporation['input3']
-mileage = transportation['input4']
-typeOfFuel = transportation['input5']
-flight = transportation['input6']
+let bus = transportation['input1']
+let train = transportation['input2']
+let vehicle = transporation['input3']
+let mileage = transportation['input4']
+let typeOfFuel = transportation['input5']
+let flight = transportation['input6']
 
 bus = bus * 0.11 * 20
 train = train * 0.06 * 20
 flight = flight * 0.12 
 
 switch(typeOfFuel) {
-    case 'Gasoline': vehicle = vehicle * 2.31 /mileage;
-    break;
-    case 'Diesel': vehicle = vehicle * 2.68 / mileage;
-    break;
+    case 'Gasoline': vehicle = vehicle * 2.31 /mileage
+    break
+    case 'Diesel': vehicle = vehicle * 2.68 / mileage
+    break
     case 'Electric': vehicle = vehicle * mileage/100 * 0.4
-    break;
+    break
     case 'Hybrid': vehicle = vehicle/mileage * 2.31
 }
 
 
-transportationEmission = (bus + train + vehicle) * 20 //20 working days in a month
-transportationEmission = transportationEmission + flight //adding flight emissions
+let transportationEmissionPerPerson = (bus + train + vehicle) * 20 //20 working days in a month
+transportationEmissionPerPerson = transportationEmission + flight //adding flight emissions, value per person
 
 
 // Waste Management
-waste = wasteManagement[input1]
-recycle = wasteManagement[input2]
-compost = wasteManagement[input3]
-wasteSaved = 0
-recycleSaved = 0
-compostSaved = 0
+let waste = wasteManagement[input1]
+let recycle = wasteManagement[input2]
+let compost = wasteManagement[input3]
+let wasteSaved = 0
+let recycleSaved = 0
+let compostSaved = 0
 
 
 if (recycle) {
@@ -86,13 +84,15 @@ if (compost)  {
 
 waste = waste - wasteSaved
 
-wasteEmission = waste + recycleSaved + compostSaved //per week
+let wasteEmission = waste + recycleSaved + compostSaved //per week
 wasteEmission = wasteEmission * 4 //4 weeks per month
 
 
 //Water Usage
-water = waterUsage['input1']
-waterHeat = waterUsage['input2']
+let water = waterUsage['input1']
+let waterHeat = waterUsage['input2']
+let energyPerLiter = 0
+let totalWaterEnergy = 0
 
 if (waterHeat == 'Natural Gas') {
     energyPerLiter = 0.0664
@@ -107,13 +107,14 @@ if (waterHeat == 'Natural Gas') {
     totalWaterEnergy = water * energyPerLiter
 }
 
-waterEmission = totalWaterEnergy    //per month
+let waterEmission = totalWaterEnergy    //per month
 
 //Food
-meat = food['input1']
-dairy = food['input2']
-local = food['input3']
-foodWaste = food['input4']
+let meat = food['input1']
+let dairy = food['input2']
+let local = food['input3']
+let foodWaste = food['input4']
+let foodEmission = 0
 
 meat = meat * 15
 dairy = dairy * 3
@@ -127,9 +128,14 @@ foodEmission = foodEmission + foodWaste     //per week
 foodEmission = foodEmission * 4 //4 weeks per month
 
 //Household Size
-people = householdSize['input1']
-size = householdSize['input2']
+let people = householdSize['input1']
+let size = householdSize['input2']
 
-finalEmission = energyEmission + wasteEmission + waterEmission + foodEmission
+let energyEmissionPerPerson = energyEmission / people
+let transportationEmission = transportationEmissionPerPerson * people
+let wasteEmissionPerPerson = wasteEmission / people
+let waterEmissionPerPerson = waterEmission/ people
+let foodEmissionPerPerson = foodEmission / people
 
-emissionPerPerson = finalEmission/people //carbon emission per person
+console.log(energyEmission)
+console.log(energyEmissionPerPerson)
