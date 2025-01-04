@@ -31,15 +31,15 @@ renewableElectricity = renewableElectricity / 10
 
 electricity = electricity * (1 - renewableElectricity)
 
-let energyEmission = electricity + heating //per month
+let energyEmission = Math.round(electricity + heating) //per month
 
 
 // Transporation
 let bus = transportation['input1']
 let train = transportation['input2']
 let vehicle = transportation['input3']
-let mileage = transportation['input4']
-let typeOfFuel = transportation['input5']
+let typeOfFuel = transportation['input4']
+let mileage = transportation['input5']
 let flight = transportation['input6']
 
 bus = bus * 0.11 * 20
@@ -59,6 +59,7 @@ switch(typeOfFuel) {
 
 let transportationEmissionPerPerson = (bus + train + vehicle) * 20 //20 working days in a month
 transportationEmissionPerPerson += flight //adding flight emissions, value per person
+transportationEmissionPerPerson = Math.round(transportationEmissionPerPerson)
 
 
 // Waste Management
@@ -85,7 +86,7 @@ if (compost)  {
 waste = waste - wasteSaved
 
 let wasteEmission = waste + recycleSaved + compostSaved //per week
-wasteEmission = wasteEmission * 4 //4 weeks per month
+wasteEmission = Math.round(wasteEmission * 4) //4 weeks per month
 
 
 //Water Usage
@@ -107,7 +108,7 @@ if (waterHeat == 'Natural Gas') {
     totalWaterEnergy = water * energyPerLiter
 }
 
-let waterEmission = totalWaterEnergy    //per month
+let waterEmission = Math.round(totalWaterEnergy)    //per month
 
 //Food
 let meat = food['input1']
@@ -125,17 +126,112 @@ if (local) {
 }
 
 foodEmission = foodEmission + foodWaste     //per week
-foodEmission = foodEmission * 4 //4 weeks per month
+foodEmission = Math.round(foodEmission * 4) //4 weeks per month
 
 //Household Size
 let people = householdSize['input1']
 let size = householdSize['input2']
 
-let energyEmissionPerPerson = energyEmission / people
-let transportationEmission = transportationEmissionPerPerson * people
-let wasteEmissionPerPerson = wasteEmission / people
-let waterEmissionPerPerson = waterEmission/ people
-let foodEmissionPerPerson = foodEmission / people
+let energyEmissionPerPerson = Math.round(energyEmission / people)
+let transportationEmission = Math.round(transportationEmissionPerPerson * people)
+let wasteEmissionPerPerson = Math.round(wasteEmission / people)
+let waterEmissionPerPerson = Math.round(waterEmission/ people)
+let foodEmissionPerPerson = Math.round(foodEmission / people)
 
-console.log(energyEmission)
-console.log(energyEmissionPerPerson)
+let totalHouseholdEmission = Math.round((energyEmission + transportationEmission + wasteEmission + waterEmission + foodEmission))
+let totalPersonEmission = Math.round((energyEmissionPerPerson + transportationEmissionPerPerson + wasteEmissionPerPerson + waterEmissionPerPerson + foodEmissionPerPerson))
+
+// Display Calculations
+let yourCarbonFootprint = document.getElementById("your-carbon-footprint")
+let yourCarbonFootprintEnergy = document.getElementById("your-carbon-footprint-energy")
+let yourCarbonFootprintTransportation = document.getElementById("your-carbon-footprint-transportation")
+let yourCarbonFootprintWaste = document.getElementById("your-carbon-footprint-waste")
+let yourCarbonFootprintWater = document.getElementById("your-carbon-footprint-water")
+let yourCarbonFootprintFood = document.getElementById("your-carbon-footprint-food")
+let yourHouseholdCarbonFootprint = document.getElementById("your-household-carbon-footprint")
+let yourHouseholdCarbonFootprintEnergy = document.getElementById("your-household-carbon-footprint-energy")
+let yourHouseholdCarbonFootprintTransportation = document.getElementById("your-household-carbon-footprint-transportation")
+let yourHouseholdCarbonFootprintWaste = document.getElementById("your-household-carbon-footprint-waste")
+let yourHouseholdCarbonFootprintWater = document.getElementById("your-household-carbon-footprint-water")
+let yourHouseholdCarbonFootprintFood = document.getElementById("your-household-carbon-footprint-food")
+
+yourCarbonFootprint.innerHTML += `${totalPersonEmission}` + ` kg CO₂`
+yourCarbonFootprintEnergy.innerHTML += `${energyEmissionPerPerson}` + ` kg CO₂`
+yourCarbonFootprintTransportation.innerHTML += `${transportationEmissionPerPerson}` + ` kg CO₂`
+yourCarbonFootprintWaste.innerHTML += `${wasteEmissionPerPerson}` + ` kg CO₂`
+yourCarbonFootprintWater.innerHTML += `${waterEmissionPerPerson}` + ` kg CO₂`
+yourCarbonFootprintFood.innerHTML += `${foodEmissionPerPerson}` + ` kg CO₂`
+yourHouseholdCarbonFootprint.innerHTML = `${totalHouseholdEmission}` + ` kg CO₂`
+yourHouseholdCarbonFootprintEnergy.innerHTML += `${energyEmission}` + ` kg CO₂`
+yourHouseholdCarbonFootprintTransportation.innerHTML += `${transportationEmission}` + ` kg CO₂`
+yourHouseholdCarbonFootprintWaste.innerHTML += `${wasteEmission}` + ` kg CO₂`
+yourHouseholdCarbonFootprintWater.innerHTML += `${waterEmission}` + ` kg CO₂`
+yourHouseholdCarbonFootprintFood.innerHTML += `${foodEmission}` + ` kg CO₂`
+
+// Pie Chart
+google.charts.load('current', {'packages':['corechart']})
+                        google.charts.setOnLoadCallback(drawChart)
+
+                        function drawChart() {
+                
+                        var data = google.visualization.arrayToDataTable([
+                            ['Factor', 'Carbon Footrpint Count'],
+                            ['Energy Use', energyEmission],
+                            ['Transportation', transportationEmission],
+                            ['Waste Management', wasteEmission],
+                            ['Water Usage', waterEmission],
+                            ['Food', foodEmission],
+                        ])
+                
+                        var options = {
+                            is3D: true, // 3D version
+                            tooltip: {
+                                trigger: 'selection',
+                            },
+                            'width': 740,
+                                'height': 400,
+                                'backgroundColor': 'transparent',  // Transparent background
+                                'chartArea': {
+                                    'width': '100%',
+                                    'height': '100%',
+                                    'backgroundColor': 'transparent'  // Transparent chart area
+                                },
+                            'pieSliceText': 'percentage',  // Display percentage on pie slices
+                            'slices': {
+                                        // 0: { 'offset': 0.1, 'color': '#B6B9B9' },  // Grey Color of the slices
+                                        // 1: { 'color': '#A9A9A9' },
+                                        // 2: { 'color': '#808080' },
+                                        // 3: { 'color': '#606060' },
+                                        // 4: { 'color': '#404040' },
+                                        // 5: { 'color': '#2F2F2F' }, 
+                                        // 6: { 'color': '#1F1F1F' } 
+                                        // 0: { 'offset': 0.1, 'color': '#A3D1A1' },  // Green Color of the slices
+                                        0: { 'color': '#82B89E' },  // Green Color of the slices
+                                        1: { 'color': '#A2C46E' },
+                                        2: { 'color': '#B0D65B' },
+                                        3: { 'color': '#40916C' },
+                                        4: { 'color': '#2D6A4F' },
+                                        5: { 'color': '#1B4332' }, 
+                                        // Additional Slices as needed
+                            },
+                            'legend': {
+                                position: 'right',
+                                alignment: 'center',
+                                textStyle: {
+                                    color: 'white',
+                                    fontSize: 22,
+                                    // bold: true,
+                                    fontName: 'Quicksand'
+                                }
+                            },
+                            pieSliceTextStyle: {
+                                color: 'white',
+                                fontName: 'Quicksand',
+                                fontSize: 15
+                            }
+                        }
+                
+                        var chart = new google.visualization.PieChart(document.getElementById('piechart'))
+                
+                        chart.draw(data, options)
+                        }

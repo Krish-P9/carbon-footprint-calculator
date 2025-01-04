@@ -396,7 +396,7 @@ input[type="checkbox"] {
 }
 
 .info-block-subtitle {
-    margin-bottom: 30px;
+    margin-bottom: 6px;
     text-align: center;
     font-family: var(--ff-primary);
     font-size: var(--font-size-main-q);
@@ -420,11 +420,37 @@ input[type="checkbox"] {
     text-shadow: var(--std-shadow);
 }
 
+.info-block-text-final-value {
+    color: var(--green6);
+}
+
 #piechart {
     font-family: var(--ff-primary);
     overflow: hidden;    /* Ensure the chart's contents stay within the rounded corners */
     font-weight: 500;
     text-shadow: var(--std-shadow);
+}
+
+/* ----Information Page---- */
+
+.info-block-text-small {
+    margin: 5px 0px;
+    font-family: var(--ff-primary);
+    font-size: 23px;
+    color: white;
+    text-shadow: var(--std-shadow);
+    margin-right: auto;
+}
+
+.info-block-text-small-header {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-family: var(--ff-primary);
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-shadow: var(--std-shadow);
+    margin-right: auto;
 }
 
 /* ----media queries---- */
