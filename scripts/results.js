@@ -167,3 +167,74 @@ yourHouseholdCarbonFootprintTransportation.innerHTML += `${transportationEmissio
 yourHouseholdCarbonFootprintWaste.innerHTML += `${wasteEmission}` + ` kg CO₂`
 yourHouseholdCarbonFootprintWater.innerHTML += `${waterEmission}` + ` kg CO₂`
 yourHouseholdCarbonFootprintFood.innerHTML += `${foodEmission}` + ` kg CO₂`
+
+
+// Pie Chart
+google.charts.load('current', {'packages':['corechart']})
+                        google.charts.setOnLoadCallback(drawChart)
+
+                        function drawChart() {
+                
+                        var data = google.visualization.arrayToDataTable([
+                            ['Factor', 'Carbon Footrpint Count'],
+                            ['Energy Use', 8],
+                            ['Transportation', 2],
+                            ['Waste Management', 2],
+                            ['Water Usage', 2],
+                            ['Food', 2],
+                            ['Household-size', 8]
+                        ])
+                
+                        var options = {
+                            is3D: true, // 3D version
+                            tooltip: {
+                                trigger: 'selection',
+                            },
+                            'width': 740,
+                                'height': 400,
+                                'backgroundColor': 'transparent',  // Transparent background
+                                'chartArea': {
+                                    'width': '100%',
+                                    'height': '100%',
+                                    'backgroundColor': 'transparent'  // Transparent chart area
+                                },
+                            'pieSliceText': 'percentage',  // Display percentage on pie slices
+                            'slices': {
+                                        // 0: { 'offset': 0.1, 'color': '#B6B9B9' },  // Grey Color of the slices
+                                        // 1: { 'color': '#A9A9A9' },
+                                        // 2: { 'color': '#808080' },
+                                        // 3: { 'color': '#606060' },
+                                        // 4: { 'color': '#404040' },
+                                        // 5: { 'color': '#2F2F2F' }, 
+                                        // 6: { 'color': '#1F1F1F' } 
+                                        // 0: { 'offset': 0.1, 'color': '#A3D1A1' },  // Green Color of the slices
+                                        0: { 'color': '#A3D1A1' },  // Green Color of the slices
+                                        1: { 'color': '#82B89E' },
+                                        2: { 'color': '#A2C46E' },
+                                        3: { 'color': '#B0D65B' },
+                                        4: { 'color': '#40916C' },
+                                        5: { 'color': '#2D6A4F' }, 
+                                        6: { 'color': '#1B4332' } 
+                                        // Additional Slices as needed
+                            },
+                            'legend': {
+                                position: 'right',
+                                alignment: 'center',
+                                textStyle: {
+                                    color: 'white',
+                                    fontSize: 22,
+                                    // bold: true,
+                                    fontName: 'Quicksand'
+                                }
+                            },
+                            pieSliceTextStyle: {
+                                color: 'white',
+                                fontName: 'Quicksand',
+                                fontSize: 15
+                            }
+                        }
+                
+                        var chart = new google.visualization.PieChart(document.getElementById('piechart'))
+                
+                        chart.draw(data, options)
+                        }
