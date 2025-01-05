@@ -13,35 +13,29 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     </head>
-    <body class="main-bg" id="foodPage">
+    <body class="main-bg" id="householdSizePage">
         <header>
             <a href="#"><img href="#" id="header-logo"src="./images/white-logo.png" alt="White Logo"></a>
             <nav class="primary-navbar">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li class="active"><a href="energy.html">Calculator</a></li>
+                    <li><a href="/home.html">Home</a></li>
+                    <li class="active"><a href="/pages/energy.html">Calculator</a></li>
                     <li><a href="information.html">Information</a></li>
                 </ul>
             </nav>
             <button class="hover-select sign-in-btn">Sign In</button>
         </header>
         <nav>
-            <a href="water-usage.html"><button id="back-save-btn" class="back-calculator-btn hover-select"><p>←</p></button></a>
-            <a href="household-size.html"><button id="next-save-btn" class="next-calculator-btn hover-select"><p>→</p></button></a>
+            <a href="/pages/food.html"><button id="back-save-btn" class="back-calculator-btn hover-select"><p>←</p></button></a>
+            <a href="/pages/results.html"><button id="next-save-btn" class="next-calculator-btn hover-select"><p>→</p></button></a>
         </nav>
         <main class="main-content">
             <div class="main-content-container">
-                <h1 class="content-title">Food</h1>
-                <h2 class="content-q-title">Meat and Dairy</h1>
-                    <input type='text' class="content-input inputs" placeholder="Meat consumed per week (kg)">
-                    <input type='text' class="content-input inputs" placeholder="Dairy consumed per week (kg)">
-                    <div id="food-content-checks">
-                        <input type="checkbox" id="localBought" class="content-checkbox inputs">
-                        <label for="localBought" id="food-content-check1"class="content-label">Food bought locally?</label>
-                    </div>
-                <h2 class="content-q-title">Food Waste</h2>
-                    <input type="text" class="content-input inputs" placeholder="Food wasted per week (kg)">
-            </div>
+                <h1 class="content-title">HOUSEHOLD SIZE</h1>
+                <h2 class="content-q-title">People</h1>
+                <input type='text' class="content-input inputs" placeholder="# of people in household">
+                <input type='text' class="content-input inputs" placeholder="Size of home (sq ft)">
+                </div>
         </main>
     </body>
     <script src="./scripts/index.js"></script>
